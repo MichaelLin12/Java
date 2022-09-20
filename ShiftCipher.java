@@ -8,7 +8,13 @@ public class ShiftCipher{
         //     System.out.println("key="+ i + " "+ possibilities.get(i));
         // }
 
-        System.out.println(encryptPlainText("EDWARD",8));
+        // System.out.println(encryptPlainText("EDWARD",8));
+
+        int i = 1;
+        while(Math.pow(2,i)%26 != 1){
+            i++;
+        }
+        System.out.println("i: " + i);
     }
 
     public static List<String> hackShiftCipher(String cipherText){
