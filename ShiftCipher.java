@@ -3,12 +3,12 @@ import java.util.List;
 
 public class ShiftCipher{
     public static void main(String[] args){
-        // List<String> possibilities = hackShiftCipher("DIBSMFT GNKBCDGVJ KISVKI MLEIZL");
-        // for(int i = 0; i < possibilities.size(); i++){
-        //     System.out.println("key="+ i + " "+ possibilities.get(i));
-        // }
+        List<String> possibilities = hackShiftCipher("DIBSMFT GNKBCDGVJ KISVKI MLEIZL");
+        for(int i = 0; i < possibilities.size(); i++){
+            System.out.println("key="+ i + " "+ possibilities.get(i));
+        }
 
-        // System.out.println(encryptPlainText("EDWARD",8));
+        System.out.println(encryptPlainText("EDWARD",8));
 
         int i = 1;
         while(Math.pow(2,i)%26 != 1){
