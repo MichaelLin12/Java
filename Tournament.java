@@ -78,9 +78,9 @@ public class Tournament {
     }
 
     public static void main(String[] args){
-        Tournament t = new Tournament(new String[]{"Apple","Bananna","Cherry","Orange","Strawberry"});
+        Tournament t = new Tournament(new String[]{"Michael","Michael","Seth","Martin","John","Mitchie","Win","Kang","Carter","Max"});
         System.out.println(t.getConversion());
-        List<List<Integer>> result = t.findCombinations(2);
+        List<List<Integer>> result = t.findCombinations(6);
         //System.out.println(result);
         System.out.println(t.convertWithMap(result));
         
