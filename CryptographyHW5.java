@@ -5,7 +5,7 @@ public class CryptographyHW5 {
         String PT = "0101000001001101";
         String CT = "11101010110010 0 1 1 1 1 0 0 1 0 1 1 0 1 0 1 1 0 00 0 1 0 0 0 1 0 0 1 0 1 1 0 1 0 0 0 1 1 0 0 1 1 1 0 0 0 1 0 0 11 0 1 0 1 0 0 1 0 1 0 1 1 0 1 0 1 0 0 0 1 1 1 0 1 1 0 0 0 0 1 11 0 0 1 0 0 1 1 0 1 1 0 0 0 0 0 1 1 0 1 1 0 0 0 0 1 0 0 1 1 1 01 1 1 0 0 1 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 1 1 1 0 1 1 0 0 0 0 00 0 0 0 0 0 1 1";
         ArrayList<String> CTDiv = separateIntoBytes(CT,2);
-        //System.out.println(CTDiv);
+        System.out.println(CTDiv);
 
         ArrayList<String> keyStream = findKeys(PT,CTDiv);
         System.out.println(keyStream);
