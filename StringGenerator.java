@@ -1,11 +1,11 @@
 public class StringGenerator {
     public static void main(String[] args) {
         // Generate a random string of length 100 using only lowercase letters
-        String[] records = generateRandomStrings(1000,100,26, 97);
+        String[] records = generateRandomStrings(100,100,26, 97);
 
         // Print the generated string
         for (int i = 0; i < records.length; i++) {
-            System.out.print(records[i]+"\n");
+            System.out.println(records[i]);
         }
     }
 
