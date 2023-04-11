@@ -1,27 +1,36 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
+
 public class StringGenerator {
-    public static void main(String[] args) {
-        // Generate a random string of length 100 using only lowercase letters
-        String[] records = generateRandomStrings(100,100,26, 97);
+    private static final String LOWERCASE_ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
-        // Print the generated string
-        for (int i = 0; i < records.length; i++) {
-            System.out.println(records[i]);
-        }
-    }
-
-    public static String[] generateRandomStrings(int size, int length, int range, int offset) {
-        String[] records = new String[size];
-        for (int i = 0; i < size; i++) {
-            records[i] = generateRandomString(length, range, offset);
-        }
-        return records;
-    }
-
-    public static String generateRandomString(int length, int range, int offset) {
-        StringBuilder sb = new StringBuilder();
+    public static String generateRandomString(int length) {
+        StringBuilder sb = new StringBuilder(length);
+        Random random = new Random();
         for (int i = 0; i < length; i++) {
-            sb.append((char) (Math.random() * range + offset));
+            int randomIndex = random.nextInt(LOWERCASE_ALPHABET.length());
+            char randomChar = LOWERCASE_ALPHABET.charAt(randomIndex);
+            sb.append(randomChar);
         }
         return sb.toString();
+    }
+    
+    public static void writeRandomStringsToFile(String filePath, int numberOfStrings, int stringLength) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+        for (int i = 0; i < numberOfStrings; i++) {
+            String randomString = generateRandomString(stringLength);
+            writer.write(randomString);
+            writer.newLine();
+        }
+        writer.close();
+    }
+    
+    public static void main(String[] args) throws IOException {
+        String filePath = "random_strings.txt";
+        int numberOfStrings = 1000000;
+        int stringLength = 100;
+        writeRandomStringsToFile(filePath, numberOfStrings, stringLength);
     }
 }
