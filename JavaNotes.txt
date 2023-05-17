@@ -1,0 +1,236 @@
+Math class
+    - static type abs(a,b)
+    - double ceil(double a)
+    - double floor(double a)
+    - type max(a,b)
+    - type min(a,b)
+    - double pow(double a, double b)
+    - random()
+        - returns a random number between 0.0 and 1.0
+    - double toDegrees(double angrad)
+    - double toRadians(double angdeg)
+String class
+    - char charAt(int index)
+    - int compareTo(String anotherString)
+    - int compareToIgnoreCase(String str)
+    - String concat(String str)
+    - boolean contains(CharSequence s)
+    - boolean endsWith(String suffix)
+    - boolean equals(Object anObject)
+    - boolean equalsIgnoreCase(String anotherString)
+    - int indexOf(int ch)
+    - int indexOf(int ch, int fromIndex)
+    - int indexOf(String str)
+    - int indexOf(String str, int fromIndex)
+    - char[] toCharArray()
+    - String trim()
+    - String substring(int beginIndex)
+    - String substring(int beginIndex, int endIndex)
+    - String replace(char oldChar, char newChar)
+    - String replace(CharSequence target, CharSequence replacement)
+    - String replaceAll(String regex, String replacement)
+    - String[] split(String regex)
+    - String[] split(String regex, int limit)
+    - String trim()
+StringBuffer class
+    - StringBuffer append(boolean b)
+    - StringBuffer append(char c)
+    - StringBuffer append(char[] str)
+    - StringBuffer append(char[] str, int offset, int len)
+    - StringBuffer append(double d)
+    - StringBuffer append(float f)
+    - StringBuffer append(int i)
+    - StringBuffer append(long lng)
+    - StringBuffer append(Object obj)
+    - StringBuffer append(String str)
+    - StringBuffer append(StringBuffer sb)
+    - StringBuffer delete(int start, int end)
+    - StringBuffer deleteCharAt(int index)
+    - StringBuffer insert(int offset, boolean b)
+    - StringBuffer insert(int offset, char c)
+    - StringBuffer insert(int offset, char[] str)
+    - StringBuffer insert(int index, char[] str, int offset, int len)
+    - StringBuffer insert(int offset, double d)
+    - StringBuffer insert(int offset, float f)
+    - StringBuffer insert(int offset, int i)
+    - StringBuffer insert(int offset, long l)
+    - StringBuffer insert(int offset, Object obj)
+    - StringBuffer insert(int offset, String str)
+    - StringBuffer replace(int start, int end, String str)
+    - StringBuffer reverse()
+    - String toString()
+Pair<K,V> class
+    - Pair(K key, V value)
+    - K getKey()
+    - V getValue()
+    - String toString()
+    - boolean equals(Object o)
+    - int hashCode()
+    - static <K,V> Pair<K,V> of(K key, V value)
+        - returns a new pair containing the given elements
+        - ex. Pair<String, Integer> pair = Pair.of("a", 1);
+    - static <K,V> Pair<K,V> ofEntries(Map.Entry<K,V>... entries)
+        - returns a new pair containing the given entries
+        - ex. Pair<String, Integer> pair = Pair.ofEntries(Map.entry("a", 1), Map.entry("b", 2));
+Integer class
+    -Integer.MAX_VALUE
+    -Integer.MIN_VALUE
+    -Integer.SIZE
+    -Integer.BYTES
+Double class
+    - Double.MAX_VALUE
+    - Double.MIN_VALUE
+    - Double.POSITIVE_INFINITY
+    - Double.NEGATIVE_INFINITY
+    - Double.NaN
+Character class
+    - Character.isLetter(char ch)
+    - Character.isDigit(char ch)
+    - Character.isWhitespace(char ch)
+    - Character.isUpperCase(char ch)
+    - Character.isLowerCase(char ch)
+    - Character.toUpperCase(char ch)
+    - Character.toLowerCase(char ch)
+    - Character.toString(char ch)
+Arrays class
+Collections class
+ArrayList<E> class
+LinkedList<E> class
+Map<K,V> class
+HashMap<K,V> class
+Set<E> class
+    - Set<E> set = new HashSet<E>();
+    - Set<E> set = new LinkedHashSet<E>();
+    - Set<E> set = new TreeSet<E>();
+HashSet<E> class
+    - What are the methods and signatures of the HashSet class?
+        - boolean add(E e)
+        - void clear()
+        - boolean contains(Object o)
+        - boolean isEmpty()
+        - boolean remove(Object o)
+        - int size()
+        - Object[] toArray()
+        - <T> T[] toArray(T[] a)
+Stack<E> class
+Arrays class
+Collections class
+BufferReader class
+BufferWriter class
+File class
+FileReader class
+FileWriter class
+Scanner class
+Random class
+Pattern class
+Date class
+Iterators
+Streams
+    - What is a stream?
+        - A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result.
+        - A stream is not a data structure instead it takes input from the Collections, Arrays or I/O channels.
+        - Streams don't change the original data structure, they only provide the result as per the pipelined methods.
+        - Each intermediate operation is lazily executed and returns a stream as a result, hence various intermediate operations can be pipelined. Terminal operations mark the end of the stream and return the result.
+    - What are some ways to create a stream?
+        - Stream.of()
+            - returns a stream consisting of the specified values
+            - ex. Stream<String> stream = Stream.of("a", "b", "c");
+        - Stream.empty()
+            - returns an empty sequential stream
+            - ex. Stream<String> stream = Stream.empty();
+        - Stream.iterate()
+            - returns an infinite sequential ordered Stream produced by iterative application of the provided next function to an initial element, conditioned on satisfying the given hasNext predicate
+            - ex. Stream<Integer> stream = Stream.iterate(0, n -> n + 2);
+        - Stream.generate()
+            - returns an infinite sequential unordered stream where each element is generated by the provided Supplier
+            - ex. Stream<String> stream = Stream.generate(() -> "abc");
+        - Collection.stream()
+            - returns a sequential Stream with the collection as its source
+            - ex. Stream<String> stream = collection.stream();
+        - Collection.parallelStream()
+            - returns a possibly parallel Stream with the collection as its source
+            - ex. Stream<String> stream = collection.parallelStream();
+        - Files.lines()
+            - returns a stream of lines extracted from this stream, in which each line is a String
+            - ex. Stream<String> stream = Files.lines(Paths.get("file.txt"));
+        - Pattern.splitAsStream()
+            - returns a stream of strings computed by splitting this string around matches of the given regular expression
+            - ex. Stream<String> stream = Pattern.compile(" +").splitAsStream("a b c");
+        - BufferedReader.lines()
+            - returns a stream of lines extracted from this stream, in which each line is a String
+            - ex. Stream<String> stream = new BufferedReader(new FileReader("file.txt")).lines();
+        - IntStream.range()
+            - returns a sequential ordered IntStream from startInclusive (inclusive) to endExclusive (exclusive) by an incremental step of 1
+            - ex. IntStream stream = IntStream.range(1, 10);
+        - How about given a list or an array?
+            - ex. List<String> list = Arrays.asList("a", "b", "c");
+            - ex. String[] array = new String[]{"a", "b", "c"};
+            - ex. Stream<String> stream = list.stream();
+            - ex. Stream<String> stream = Arrays.stream(array);
+    - What are some Intermediate operations?
+        - filter()
+            - returns a stream consisting of the elements of this stream that match the given predicate
+            - ex. stream.filter(line -> line.startsWith("abc"));
+        - map()
+            - returns a stream consisting of the results of applying the given function to the elements of this stream
+            - ex. stream.map(String::toUpperCase);
+        - flatMap()
+            - returns a stream consisting of the results of replacing each element of this stream with the contents of a mapped stream produced by applying the provided mapping function to each element
+            - ex. stream.flatMap(line -> Stream.of(line.split(" +")));
+        - distinct()
+            - returns a stream consisting of the distinct elements of this stream
+            - ex. stream.distinct();
+        - sorted()
+            - returns a stream consisting of the elements of this stream, sorted according to natural order
+            - ex. stream.sorted();
+        - peek()
+            - returns a stream consisting of the elements of this stream, additionally performing the provided action on each element as elements are consumed from the resulting stream
+            - ex. stream.peek(System.out::println);
+        - limit()
+            - returns a stream consisting of the elements of this stream, truncated to be no longer than maxSize in length
+            - ex. stream.limit(10);
+        - skip()
+            - returns a stream consisting of the remaining elements of this stream after discarding the first n elements of the stream
+            - ex. stream.skip(5);
+        - parallel()
+            - returns an equivalent stream that is parallel
+            - ex. stream.parallel();
+        - sequential()
+            - returns an equivalent stream that is sequential
+            - ex. stream.sequential();
+    - What are some Terminal operations?
+        - forEach(Consumer action)
+            - consumer only accepts one argument and returns no result
+            - performs an action for each element of the stream
+            - ex. stream.forEach(System.out::println);
+        - forEachOrdered(Consumer action)
+            - performs an action for each element of the stream, in the encounter order of the stream if the stream has a defined encounter order
+            - ex. stream.forEachOrdered(System.out::println);
+        - toArray()
+            - <A> A[] toArray(IntFunction<A[]> generator)
+            - returns an array containing the elements of the stream
+            - ex. Object[] objects = stream.toArray();
+        - reduce()
+            - performs a reduction on the elements of the stream with the given function
+            - ex. Optional<Integer> reduced = stream.reduce((a,b) -> a+b);
+        - collect()
+            - returns the result of the intermediate operations performed on the stream
+            - ex. List<Integer> list = stream.collect(Collectors.toList());
+        - min()
+            - returns the minimum element of the stream according to the provided Comparator
+            - ex. Optional<Integer> min = stream.min((a,b) -> a-b);
+        - max()
+            - returns the maximum element of the stream according to the provided Comparator
+            - ex. Optional<Integer> max = stream.max((a,b) -> a-b);
+        - count()
+            - returns a long value representing the total number of elements in the stream
+            - ex. long count = stream.count();
+        - anyMatch()
+            - returns true if any elements of the stream match the provided predicate, otherwise false
+            - ex. boolean match = stream.anyMatch("abc"::equals);
+        - allMatch()
+            - returns true if all elements of the stream match the provided predicate, otherwise false
+            - ex. boolean match = stream.allMatch("abc"::equals);
+        - noneMatch()
+            - returns true if no elements of the stream match the provided predicate, otherwise false
+            - ex. boolean match = stream.noneMatch("abc"::equals);
